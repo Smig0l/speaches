@@ -23,6 +23,7 @@ ENV HOME=/home/ubuntu \
 WORKDIR $HOME/speaches
 # https://docs.astral.sh/uv/guides/integration/docker/#installing-uv
 COPY --chown=ubuntu --from=ghcr.io/astral-sh/uv:0.10 /uv /bin/uv
+ENV UV_PYTHON=3.13
 # NOTE: per https://docs.astral.sh/uv/guides/install-python, `uv` will automatically install the necessary python version
 # https://docs.astral.sh/uv/guides/integration/docker/#intermediate-layers
 # https://docs.astral.sh/uv/guides/integration/docker/#compiling-bytecode
