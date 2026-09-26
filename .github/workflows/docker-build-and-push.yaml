@@ -8,7 +8,7 @@ on:
     types: [published]
 env:
   REGISTRY: ghcr.io
-  FULL_IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/speaches
+  FULL_IMAGE_NAME: ${{ github.repository }}
 jobs:
   docker:
     runs-on: selfhosted-runner
@@ -32,7 +32,7 @@ jobs:
         uses: docker/metadata-action@c299e40c65443455700f0fdfc63efafe5b349051 # v5
         with:
           images: |
-            ${{ env.FULL_IMAGE_NAME }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           # https://github.com/docker/metadata-action?tab=readme-ov-file#flavor-input
           flavor: |
             suffix=${{ matrix.tag-suffix}},onlatest=true
