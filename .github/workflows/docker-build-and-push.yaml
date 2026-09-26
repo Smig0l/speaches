@@ -8,7 +8,7 @@ on:
     types: [published]
 env:
   REGISTRY: ghcr.io
-  FULL_IMAGE_NAME: ghcr.io/speaches-ai/speaches
+  FULL_IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/speaches
 jobs:
   docker:
     runs-on: selfhosted-runner
